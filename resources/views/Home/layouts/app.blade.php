@@ -83,10 +83,10 @@
                     <div class="dropdown-menu top-20 left-1/2 -translate-x-1/2 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 mt-1">
                         <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-t border-l border-slate-100"></div>
                         <div class="relative bg-white z-10 flex flex-col">
-                            <a href="{{ route('profil', 'sejarah') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-clock-rotate-left w-4 text-brand-500"></i> Sejarah</a>
-                            <a href="{{ route('profil', 'visi-misi') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-bullseye w-4 text-brand-500"></i> Visi Misi</a>
-                            <a href="{{ route('profil', 'geografis') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-map-location-dot w-4 text-brand-500"></i> Geografis</a>
-                            <a href="{{ route('profil', 'demografis') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-users w-4 text-brand-500"></i> Demografis</a>
+                            <a href="{{ route('profil.sejarah') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-clock-rotate-left w-4 text-brand-500"></i> Sejarah</a>
+                            <a href="{{ route('profil.visi-misi') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-bullseye w-4 text-brand-500"></i> Visi Misi</a>
+                            <a href="{{ route('profil.geografis') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-map-location-dot w-4 text-brand-500"></i> Geografis</a>
+                            <a href="{{ route('profil.demografis') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-users w-4 text-brand-500"></i> Demografis</a>
                         </div>
                     </div>
                 </div>
@@ -101,9 +101,9 @@
                     <div class="dropdown-menu top-20 left-1/2 -translate-x-1/2 w-56 bg-white rounded-2xl shadow-xl border border-slate-100 py-3 mt-1">
                         <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-t border-l border-slate-100"></div>
                         <div class="relative bg-white z-10 flex flex-col">
-                            <a href="{{ route('informasi', 'pengumuman') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-bullhorn w-4 text-brand-500"></i> Pengumuman</a>
-                            <a href="{{ route('informasi', 'berita') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-newspaper w-4 text-brand-500"></i> Berita Terkini</a>
-                            <a href="{{ route('informasi', 'agenda') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-regular fa-calendar-check w-4 text-brand-500"></i> Agenda Kegiatan</a>
+                            <a href="{{ route('informasi.pengumuman') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-bullhorn w-4 text-brand-500"></i> Pengumuman</a>
+                            <a href="{{ route('informasi.berita') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-solid fa-newspaper w-4 text-brand-500"></i> Berita Terkini</a>
+                            <a href="{{ route('informasi.agenda') }}" class="px-5 py-2.5 hover:bg-slate-50 hover:text-brand-600 transition-colors flex items-center gap-3"><i class="fa-regular fa-calendar-check w-4 text-brand-500"></i> Agenda Kegiatan</a>
                         </div>
                     </div>
                 </div>

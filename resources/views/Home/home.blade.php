@@ -119,7 +119,7 @@
                     ];
                 @endphp
                 @foreach($profilItems as $item)
-                <a href="{{ route('profil', $item['slug']) }}" class="group block bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+                <a href="{{ route('profil.' . $item['slug']) }}" class="group block bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
                     <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-2xl mb-5 {{ $item['color'] }} group-hover:text-white transition-colors duration-300">
                         <i class="fa-solid {{ $item['icon'] }}"></i>
                     </div>

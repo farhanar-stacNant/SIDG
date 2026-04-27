@@ -60,7 +60,7 @@
                 <a href="{{ route('home') }}" class="inline-flex items-center gap-2 text-slate-500 hover:text-brand-600 font-medium transition-colors">
                     <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
                 </a>
-                <a href="{{ route('profil', 'visi-misi') }}" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full transition-all duration-300 font-medium shadow-md">
+                <a href="{{ route('profil.visi-misi') }}" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full transition-all duration-300 font-medium shadow-md">
                     Selanjutnya: Visi Misi <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
