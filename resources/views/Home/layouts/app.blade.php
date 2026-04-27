@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -54,11 +55,12 @@
             visibility: hidden;
             position: absolute;
         }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
 
-    <nav class="glass-nav fixed w-full top-0 z-50 transition-all duration-300">
+    <nav class="glass-nav fixed w-full top-0 z-50 transition-all duration-300" x-data="{ mobileMenuOpen: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <!-- Logo -->
             <a href="{{ route('home') }}" class="flex items-center gap-3 group">
@@ -113,6 +115,54 @@
                 <!-- Action Button -->
                 <a href="{{ route('suarahati') }}" class="ml-4 bg-slate-900 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/30 flex items-center gap-2 font-semibold">
                     <i class="fa-solid fa-comment-dots"></i> SuaraHati
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" x-show="!mobileMenuOpen"></i>
+                    <i class="fa-solid fa-xmark text-2xl" x-show="mobileMenuOpen" x-cloak></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full" x-cloak>
+            <div class="px-4 pt-2 pb-6 space-y-1 overflow-y-auto max-h-[80vh]">
+                <a href="{{ route('home') }}" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Beranda</a>
+                
+                <!-- Profil Mobile Dropdown -->
+                <div x-data="{ profilOpen: false }">
+                    <button @click="profilOpen = !profilOpen" class="w-full flex items-center justify-between px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">
+                        Profil <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="profilOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="profilOpen" x-transition class="pl-6 pr-3 py-2 space-y-1 bg-slate-50 rounded-lg mt-1" x-cloak>
+                        <a href="{{ route('profil.sejarah') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-clock-rotate-left w-4 text-brand-500 mr-2"></i> Sejarah</a>
+                        <a href="{{ route('profil.visi-misi') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-bullseye w-4 text-brand-500 mr-2"></i> Visi Misi</a>
+                        <a href="{{ route('profil.geografis') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-map-location-dot w-4 text-brand-500 mr-2"></i> Geografis</a>
+                        <a href="{{ route('profil.demografis') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-users w-4 text-brand-500 mr-2"></i> Demografis</a>
+                    </div>
+                </div>
+
+                <a href="{{ route('layanan') }}" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Layanan Publik</a>
+
+                <!-- Informasi Mobile Dropdown -->
+                <div x-data="{ infoOpen: false }">
+                    <button @click="infoOpen = !infoOpen" class="w-full flex items-center justify-between px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">
+                        Informasi <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" :class="infoOpen ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="infoOpen" x-transition class="pl-6 pr-3 py-2 space-y-1 bg-slate-50 rounded-lg mt-1" x-cloak>
+                        <a href="{{ route('informasi.pengumuman') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-bullhorn w-4 text-brand-500 mr-2"></i> Pengumuman</a>
+                        <a href="{{ route('informasi.berita') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-solid fa-newspaper w-4 text-brand-500 mr-2"></i> Berita Terkini</a>
+                        <a href="{{ route('informasi.agenda') }}" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600"><i class="fa-regular fa-calendar-check w-4 text-brand-500 mr-2"></i> Agenda Kegiatan</a>
+                    </div>
+                </div>
+
+                <a href="{{ route('keuangan') }}" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Keuangan</a>
+                
+                <a href="{{ route('suarahati') }}" class="mt-4 flex items-center justify-center w-full bg-slate-900 hover:bg-brand-600 text-white px-6 py-3 rounded-xl transition-all duration-300 font-semibold shadow-md">
+                    <i class="fa-solid fa-comment-dots mr-2"></i> SuaraHati
                 </a>
             </div>
         </div>

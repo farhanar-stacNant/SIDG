@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Home.layouts.app')
 @section('content')
 <div class="bg-[#1a1a1a] text-white py-20 px-4">
     <div class="max-w-7xl mx-auto text-center">

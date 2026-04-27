@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Home.layouts.app')
 @section('content')
 <div class="max-w-7xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-12 items-center">
     <div class="bg-gray-100 rounded-3xl p-4 shadow-inner">
