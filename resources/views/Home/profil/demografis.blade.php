@@ -23,7 +23,7 @@
                     @foreach(['Pertanian' => 65, 'PNS / Swasta' => 15, 'UMKM' => 20] as $job => $val)
                     <div>
                         <div class="flex justify-between text-xs mb-1"><span>{{ $job }}</span><span>{{ $val }}%</span></div>
-                        <div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden"><div class="bg-green-400 h-full" style="width: {{ $val }}%"></div></div>
+                        <div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden"><div class="bg-green-400 h-full" @style(["width: {$val}%"])></div></div>
                     </div>
                     @endforeach
                 </div>
